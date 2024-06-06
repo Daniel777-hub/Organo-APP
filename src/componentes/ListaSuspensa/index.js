@@ -6,7 +6,7 @@ const ListaSuspensa = (Props) => {
     return (
         <div className='Lista-suspensa'>
             <label>{Props.label}</label>
-            <select>
+            <select required={Props.required}>
                 {Props.itens.map(item => {
                     return <option key={item}>{item}</option>
                 })}
