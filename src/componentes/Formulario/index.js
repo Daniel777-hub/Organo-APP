@@ -4,7 +4,7 @@ import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
 import React, { useState } from 'react';
 
-const Formulario = () => {
+const Formulario = (props) => {
 
 const times = [
     'Programação',
@@ -21,9 +21,14 @@ const [imagem, setImagem] = useState('')
 const [time, setTime] = useState('')
 
 
-const aoSalvar = (evento) => { 
+const aoSalvar = (evento) => {
     evento.preventDefault()
-    console.log('Form foi submetido => ', nome, cargo, imagem, time)
+    props.aoColaboradorCadastrado ({
+        nome: nome,
+        cargo: cargo,
+        imagem: imagem,
+        time: time        
+    })
 }
 
     return (
