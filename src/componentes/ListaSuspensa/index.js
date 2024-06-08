@@ -1,15 +1,15 @@
 import './ListaSuspensa.css'
 
-const ListaSuspensa = (Props) => {
-
+const ListaSuspensa = (props) => {
     return (
-        <div className='Lista-suspensa'>
-            <label>{Props.label}</label>
-            <select onChange={evento => Props.aoAlterado(evento.target.value)} required={Props.required} value={Props.value}>
-                {Props.itens.map(item => {
+        <div className='lista-suspensa'>
+            <label>{props.label}</label>
+            <select onChange={evento => props.aoAlterado(evento.target.value)} required={props.required} value={props.valor}>
+                <option value=""></option>
+                {props.itens.map(item => {
                     return <option key={item}>{item}</option>
                 })}
-            </select> 
+            </select>
         </div>
     )
 }
